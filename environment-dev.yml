@@ -1,0 +1,22 @@
+name: expdesign-dev
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy
+  - scipy
+  - pytest
+  - pytest-cov
+  - flake8
+  - black
+  - isort
+  - mypy
+  - sphinx
+  - sphinx_rtd_theme
+  - pip
+  - pip:
+    - twine
+    - build
+    - pre-commit
+    - -e .
