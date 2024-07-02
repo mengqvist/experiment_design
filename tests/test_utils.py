@@ -81,12 +81,12 @@ class TestUtils(unittest.TestCase):
 
     def test_assert_matrix_invalid_type(self):
         matrix = [[1, -1, 1], [-1, 1, -1], [1, -1, 1], [-1, 1, -1]]
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             assert_matrix(matrix)
 
     def test_assert_matrix_invalid_dimensions(self):
         matrix = np.array([1, -1, 1, -1])
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             assert_matrix(matrix)
 
     def test_assert_matrix_invalid_dtype(self):
@@ -96,7 +96,7 @@ class TestUtils(unittest.TestCase):
             [1.0, -1.0, 1.0],
             [-1.0, 1.0, -1.0]
         ])
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             assert_matrix(matrix)
 
     def test_assert_matrix_invalid_values(self):
@@ -106,7 +106,7 @@ class TestUtils(unittest.TestCase):
             [1, 2, 1],
             [-1, 1, -1]
         ])
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             assert_matrix(matrix)
 
 

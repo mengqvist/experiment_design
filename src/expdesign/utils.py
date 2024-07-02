@@ -6,11 +6,18 @@ def assert_matrix(matrix: np.ndarray) -> None:
     
     Args:
         matrix (np.ndarray): The matrix to validate.
+    
+    Raises:
+        ValueError: If the input matrix is not a valid design matrix.
     """
-    assert isinstance(matrix, np.ndarray), 'Input matrix must be a numpy array'
-    assert matrix.ndim == 2, 'Input matrix must be 2D'
-    assert np.issubdtype(matrix.dtype, np.integer), 'Input matrix must contain integers'
-    assert np.all(np.isin(matrix, [-1, 1])), 'Input matrix must contain only -1 and 1'
+    if not isinstance(matrix, np.ndarray):
+        raise ValueError('Input matrix must be a numpy array')
+    if matrix.ndim != 2:
+        raise ValueError('Input matrix must be 2D')
+    if not np.issubdtype(matrix.dtype, np.integer):
+        raise ValueError('Input matrix must contain integers')
+    if not np.all(np.isin(matrix, [-1, 1])):
+        raise ValueError('Input matrix must contain only -1 and 1')
 
 
 def is_orthogonal(matrix: np.ndarray) -> bool:
