@@ -1,4 +1,5 @@
 # Experimental Design Generator
+This package provides functions to generate various experimental designs, including Plackett-Burman and Fractional Factorial designs. These designs are used for efficient screening and analysis of multiple factors in experimental studies.
 
 ## Installation
 
